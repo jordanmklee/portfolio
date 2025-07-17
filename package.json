@@ -2,11 +2,14 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://jordanmklee.github.io/portfolio",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+	"export": "next build",
+	"deploy": "next build && gh-pages -d out"
   },
   "dependencies": {
     "@radix-ui/react-separator": "^1.1.7",

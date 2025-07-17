@@ -20,6 +20,8 @@ import {
 import Image from "next/image"
 import { useTheme } from "next-themes"
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 export default function Portfolio() {
 	const { theme, setTheme } = useTheme()
 
@@ -40,32 +42,32 @@ export default function Portfolio() {
 
 	const techStack = [
 		{
-			logo: "/assets/react-logo.png",
+			logo: `${basePath}/assets/react-logo.png`,
 			title: "React",
 			className: "bg-gradient-to-br from-sky-300/10 via-blue-600/20 to-indigo-600/10",
 		},
 		{
-			logo: "/next.svg",
+			logo: `${basePath}/next.svg`,
 			title: "Next.js",
 			className: "bg-gradient-to-br",
 		},
 		{
-			logo: "/assets/tailwind.png",
+			logo: `${basePath}/assets/tailwind.png`,
 			title: "Tailwind",
 			className: "bg-gradient-to-br from-sky-300/10 via-blue-600/20 to-indigo-600/10",
 		},
 		{
-			logo: "/assets/net-core-logo.png",
+			logo: `${basePath}/assets/net-core-logo.png`,
 			title: "ASP.NET Core",
 			className: "bg-gradient-to-br from-violet-300/20 via-violet-600/20 to-indigo-600/10",
 		},
 		{
-			logo: "/assets/ef-logo.png",
+			logo: `${basePath}/assets/ef-logo.png`,
 			title: "Entity Framework Core",
 			className: "bg-gradient-to-br from-violet-600/10 via-purple-600/20 to-violet-950/10",
 		},
 		{
-			logo: "/assets/mysql-logo.png",
+			logo: `${basePath}/assets/mysql-logo.png`,
 			title: "MySQL",
 			className: "bg-gradient-to-br from-sky-950/30 to-amber-800/30",
 		},
@@ -79,7 +81,7 @@ export default function Portfolio() {
 	}
 
 	const handleOpenResumePDF = () => {
-		window.open("/assets/jordan-lee-resume.pdf", '_blank');
+		window.open(`${basePath}/assets/jordan-lee-resume.pdf`, '_blank');
 	};
 
 	const handleEmailClick = () => {
@@ -128,7 +130,7 @@ export default function Portfolio() {
 				<div className="flex gap-6 flex-col lg:flex-row lg:gap-12">
 					<div className="w-40 h-40 lg:w-[196px] lg:h-[196px] flex-shrink-0 rounded-full overflow-hidden border-4 border-border relative">
 						<Image
-							src="/assets/portrait.jpg"
+							src={`${basePath}/assets/portrait.jpg`}
 							alt="Jordan Lee"
 							fill
 							className="object-cover"/>
